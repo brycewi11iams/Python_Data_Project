@@ -2,7 +2,7 @@
 
 Welcome to my analysis of the data job market, focusing on data scientists roles. This project was created out of a desire to navigate and understand the job market more effectively. It delves into the top-paying and in-demand skills to help find optimal job opportunities for data scientists.
 
-The data sourced from Luke Barousse's Python Course which provides a foundation for my analysis, containing detailed information on job titles, salaries, locations, and essential skills. Through a series of Python scripts, I explore key questions such as the most demanded skills, salary trends, and the intersection of demand and salary in data scientists.
+The data sourced from [Luke Barousse's Python Course](https://www.youtube.com/watch?v=wUSDVGivd-8) which provides a foundation for my analysis, containing detailed information on job titles, salaries, locations, and essential skills. Through a series of Python scripts, I explore key questions such as the most demanded skills, salary trends, and the intersection of demand and salary in data scientists.
 
 # The Questions
 
@@ -15,7 +15,7 @@ Below are the questions that I want to answer in my project:
 
 # Tool I used
 
-For my deep dive into the data analyst job market, I harnessed the power of several key tools:
+For my deep dive into the data scientist job market, I used the following tools:
 
 - **Python:** The backbone of my analysis, allowing me to analyze the data and find critical insights. I also used the following Python libraries:
     - **Pandas Library:** This was used to analyze the data.
@@ -93,7 +93,7 @@ plt.show()
 
 ![Visualization of Top Skills for Data Positions](3_Project/Images/demanded_skills_for_data_roles.png)
 
-### Insight
+### Insights
 
 - Python is the most versatile skill, as it is highly demanded in all three roles, but most prominently for Data Scientists and Data Engineers.
 - SQL is the most requested skill for Data Analysts and Data Scientists, with it in over half of the job postings for both roles.
@@ -101,7 +101,7 @@ plt.show()
 
 ## 2. How are in-demand skills trending for Data Scientists?
 
-To find how skills are trending in 2023 for Data Scientists, I filtered data analyst positions and grouped the skills by the month of the job postings. This got me the top 5 skills of data scientists by month, showing how popular skills were throughout 2023.
+To find how skills are trending in 2023 for Data Scientists, I filtered data scientist positions and grouped the skills by the month of the job postings. This got me the top 5 skills of data scientists by month, showing how popular skills were throughout 2023.
 
 View my notebook with detailed steps here:
 [3_Skills_Trends](3_Project/3_Skills_Trend.ipynb)
@@ -144,7 +144,7 @@ plt.show()
 - Tableau and SAS closely compete for the final slot around the 20% to 30% range, notably experiencing an intersection in June before SAS dips significantly in October and rallies back by December.
 - This graph proves that these technologies are safe to learn and are not trending towards being obsoluete in the near future.
 
-## 3. How well do jobs and skills pay for Data Scientist?
+## 3. How well do jobs and skills pay for Data Scientists?
 
 To identify the highest-paying roles and skills, I only got jobs in the United States and looked at their median salary. But first I looked at the salary distributions of common data jobs like Data Scientist, Data Engineer, and Data Analyst, to get an idea of which jobs are paid the most.
 
@@ -207,7 +207,7 @@ fig.tight_layout()
 ### Insights
 - Niche project management and collaboration software command a massive premium over core technical tools. asana leads the highest-paid chart at a staggering median salary of over $250,000, while platforms like airtable, notion, and slack dominate the upper tier. This indicates that data scientists who possess advanced workflow capabilities or specialize in integrating these tools are highly compensated.
 - Specialized engineering and enterprise platforms outpace standard analytical frameworks in compensation. Enterprise systems like watson and redhat, along with game development engines like unreal, drive median salaries past the $190,000 to $210,000 range. These specializations yield higher pay than popular machine learning frameworks like hugging face, which sits closer to $180,000.
-- High market demand does not automatically translate to the highest pay scales. The most widely requested foundational skills max out with tensorflow at roughly $150,000 and scale down to around $120,000 for legacy tools like sas. This suggests a clear market trade-off where these tools offer excellent job security but face salary caps due to a larger pool of qualified candidates, but these medians likely come form a few postings, so treat them cautiously.
+- High market demand does not automatically translate to the highest pay scales. The most widely requested foundational skills max out with tensorflow at roughly $150,000 and scale down to around $120,000 for legacy tools like sas. This suggests a clear market trade-off where these tools offer excellent job security but face salary caps due to a larger pool of qualified candidates, but these medians likely come from a few postings, so treat them cautiously.
 - Core technical staples display remarkable salary consistency within the high-demand tier. Foundational pillars like spark, sql, aws, and python all tightly cluster together with a median payout hovering between $130,000 and $135,000. This baseline represents the predictable market rate for a well-rounded data professional, which visibly outpaces traditional office software like excel.
 
 ## 4. What is the most optimal skill to learn for Data Scientists?
