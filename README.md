@@ -1,8 +1,8 @@
 # Overview
 
-Welcome to my analysis of the data job market, focusing on data scientists roles. This project was created out of a desire to navigate and understand the job market more effectively. It delves into the top-paying and in-demand skills to help find optimal job opportunities for data scientists.
+Welcome to my analysis of the data job market, focusing on data scientist roles. This project was created out of a desire to navigate and understand the job market more effectively. It delves into the top-paying and in-demand skills to help find optimal job opportunities for data scientists.
 
-The data is sourced from [Luke Barousse's Python Course](https://www.youtube.com/watch?v=wUSDVGivd-8) which provides a foundation for my analysis, containing detailed information on job titles, salaries, locations, and essential skills. Through a series of Python notebooks, I explore key questions such as the most demanded skills, salary trends, and the intersection of demand and salary in data scientists.
+The data is sourced from [Luke Barousse's Python Course](https://www.youtube.com/watch?v=wUSDVGivd-8) which provides a foundation for my analysis, containing detailed information on job titles, salaries, locations, and essential skills. Through a series of Python notebooks, I explore key questions such as the most demanded skills, salary trends, and the intersection of demand and salary for data scientists.
 
 # The Questions
 
@@ -21,8 +21,8 @@ For my deep dive into the data scientist job market, I used the following tools:
     - **Pandas Library:** This was used to analyze the data.
     - **Matplotlib Library:** This was used to visualize the data.
     - **Seaborn Library:** Helped me create more advanced visuals.
-- **Jupyter Notebooks:** The tool I used to run my Python scripts.
-- **Visual Studio Code:** This tool was used for executing my Python scripts.
+- **Jupyter Notebooks:** The tool I used to run my Python code.
+- **Visual Studio Code:** This tool was used for executing my Python code.
 - **Git & GitHub:** Essential for version control and sharing my Python code and analysis.
 
 # Data Prep and Cleanup
@@ -284,4 +284,4 @@ This project gave me a few general insights into the Data Scientist job market i
 
 # Conclusion
 
-This project gave me practical experience taking a large, messy dataset from raw data to clear findings. The results show that Python and SQL are the foundation skills for Data Scientists, while the highest salaries tend to go with specialized, less common skills. The data covers one year of US postings, so these are patterns in the market rather than guarantees. I plan to apply the same process to future projects, such as comparing other roles or looking at skills by location.
+This project gave me practical experience taking a large, messy dataset from raw data to clear findings. The results show that Python and SQL are the foundation skills for Data Scientists, while the highest salaries tend to go with specialized, less common skills. The data covers three years of US postings, so these are patterns in the market rather than guarantees. I plan to apply the same process to future projects, such as comparing other roles or looking at skills by location.
