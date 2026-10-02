@@ -2,7 +2,7 @@
 
 Welcome to my analysis of the data job market, focusing on data scientists roles. This project was created out of a desire to navigate and understand the job market more effectively. It delves into the top-paying and in-demand skills to help find optimal job opportunities for data scientists.
 
-The data sourced from [Luke Barousse's Python Course](https://www.youtube.com/watch?v=wUSDVGivd-8) which provides a foundation for my analysis, containing detailed information on job titles, salaries, locations, and essential skills. Through a series of Python scripts, I explore key questions such as the most demanded skills, salary trends, and the intersection of demand and salary in data scientists.
+The data is sourced from [Luke Barousse's Python Course](https://www.youtube.com/watch?v=wUSDVGivd-8) which provides a foundation for my analysis, containing detailed information on job titles, salaries, locations, and essential skills. Through a series of Python notebooks, I explore key questions such as the most demanded skills, salary trends, and the intersection of demand and salary in data scientists.
 
 # The Questions
 
@@ -13,7 +13,7 @@ Below are the questions that I want to answer in my project:
 3. How well do jobs and skills pay for Data Scientists?
 4. What are the optimal skills for Data Scientists to learn?
 
-# Tool I used
+# Tools I used
 
 For my deep dive into the data scientist job market, I used the following tools:
 
@@ -26,6 +26,13 @@ For my deep dive into the data scientist job market, I used the following tools:
 - **Git & GitHub:** Essential for version control and sharing my Python code and analysis.
 
 # Data Prep and Cleanup
+
+## About the Data
+
+The analysis uses `job_postings_flat.csv`, a dataset of data-related job postings (job titles, salaries, locations, and skills) provided with Luke Barousse's [Python for Data Analytics course](https://lukebarousse.com/python). The dataset is part of the paid course materials, so it is not included in this repository. The postings I analyzed were posted between 2023 and 2026.
+
+If you want to follow along, the course includes the data. A free 2023 version of the dataset is also available on Hugging Face (`lukebarousse/data_jobs`), but it contains older postings, so your results will differ from mine.
+
 ## Import and Cleanup Data
 
 I started by importing the necessary libraries and loading in the dataset, which was followed with the data cleaning tasks.
@@ -35,12 +42,10 @@ I started by importing the necessary libraries and loading in the dataset, which
 import ast
 import pandas as pd
 import seaborn as sns
-from datasets import load_dataset
 import matplotlib.pyplot as plt  
 
 # Loading Data
-dataset = load_dataset('lukebarousse/data_jobs')
-df = dataset['train'].to_pandas()
+df = pd.read_csv('job_postings_flat.csv')
 
 # Data Cleanup
 df['job_posted_date'] = pd.to_datetime(df['job_posted_date'])
@@ -91,7 +96,7 @@ plt.show()
 
 ### Results
 
-![Visualization of Top Skills for Data Positions](3_Project\Images\skills_requested_top_3_data.png)
+![Visualization of Top Skills for Data Positions](3_Project/Images/skills_requested_top_3_data.png)
 
 ### Insights
 
@@ -136,7 +141,7 @@ for i in range(5):
 plt.show()
 ```
 ### Results
-![Trending Top Skills for Data Scientists in the US](3_Project\Images\DS_trending_skills.png)
+![Trending Top Skills for Data Scientists in the US](3_Project/Images/DS_trending_skills.png)
 
 ### Insights:
 - Python is the most requested skill in every month, ranging from about 48% in September to about 88% in April. SQL is usually second, with R, Tableau, and AWS well behind.
@@ -166,13 +171,13 @@ plt.gca().xaxis.set_major_formatter(ticks_x)
 plt.show()
 ```
 ### Results
-![Salary Distributions of Data Jobs in the US](3_Project\Images\data_salary_distribution.png)
+![Salary Distributions of Data Jobs in the US](3_Project/Images/data_salary_distribution.png)
 
 ### Insights
 
 - Senior Data Scientists have the highest median salary at roughly $160K, followed by Senior Data Engineers at about $150K. Data Analysts have the lowest median at roughly $95K.
 - Every senior title earns more than its non-senior counterpart, by roughly $15K to $30K at the median. The gap is largest for data scientists and smallest for data engineers.
-- Data Engineers now edge out Data Scientists at the median, though their boxes overlap heavily, so the difference is small. Data Scientists have the widest middle range of the non-senior roles, with outliers running past $500K.
+- Data Engineers edge out Data Scientists at the median, though their boxes overlap heavily, so the difference is small. Data Scientists have the widest middle range of the non-senior roles, with outliers running past $500K.
 
 ### Highest Paid & Most Demanded Skills for Data Scientists
 
@@ -201,7 +206,7 @@ ax[1].xaxis.set_major_formatter(plt.FuncFormatter(lambda x, _: f'${int(x/1000)}K
 fig.tight_layout()
 ```
 ### Results
-![The Highest Paid & Most In Demand Skills for Data Scientists in the US](3_Project\Images\skill_pay_DS.png)
+![The Highest Paid & Most In Demand Skills for Data Scientists in the US](3_Project/Images/skill_pay_DS.png)
 
 ### Insights
 - The highest-paid skills are mostly project and collaboration tools such as Asana, Wrike, Airtable, and Notion, with Asana leading at about $258K. These tools are rare in Data Scientist postings, so these medians likely come from very few salaries and should be treated cautiously.
@@ -245,7 +250,7 @@ plt.show()
 ```
 ### Results
 
-![Most Optimal skills for Data Scientists in the US](3_Project\Images\DS_optimal_skills.png)
+![Most Optimal skills for Data Scientists in the US](3_Project/Images/DS_optimal_skills.png)
 
 ### Insights
 
@@ -264,7 +269,7 @@ Through this project, I built hands-on experience analyzing a real job postings 
 
 # Insights
 
-This project gave me a few general insights into the Data Scientist job market in the US (2025 postings):
+This project gave me a few general insights into the Data Scientist job market in the US (2023 - 2026 postings):
 
 - **Python and SQL are the foundation skills across data roles.** Python appeared in about 65% of Data Scientist postings and was the most requested skill in every month, and SQL is in the top two for both Data Scientists and Data Engineers. Both also pay about $137K at the median, so they offer reliable demand with solid, though not top, pay.
 - **Demand and pay point to different skills.** The most requested skills pay about $135K to $137K, while Spark, TensorFlow, and AWS pay about $142K to $150K despite appearing in only 12% to 17% of postings, and the very top-paid skills like Asana are too rare to trust. A practical strategy is to build the Python and SQL core first and then add one specialized skill such as Spark or AWS.
