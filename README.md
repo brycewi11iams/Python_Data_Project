@@ -91,17 +91,17 @@ plt.show()
 
 ### Results
 
-![Visualization of Top Skills for Data Positions](3_Project/Images/demanded_skills_for_data_roles.png)
+![Visualization of Top Skills for Data Positions](3_Project\Images\skills_requested_top_3_data.png)
 
 ### Insights
 
-- Python is the most versatile skill, as it is highly demanded in all three roles, but most prominently for Data Scientists and Data Engineers.
-- SQL is the most requested skill for Data Analysts and Data Scientists, with it in over half of the job postings for both roles.
-- Data Engineers require more specialized technical skills, such as AWS, Azure, and Spark. Data Analysts and Data Scientists are expected to be proficient in more general data management and analysis tools, such as Excel and Tableau.
+- SQL is the most requested skill for Data Analysts and Data Engineers, at 45% and 66%, while Python leads for Data Scientists at 65%. Python and SQL are both in the top two for Data Engineers and Data Scientists.
+- Data Engineers lean on infrastructure skills, with AWS (41%), Azure (34%), and Spark (30%) filling the rest of their top five. Data Scientists instead rely on R (37%), with Tableau and SAS tied at 19%.
+- Python is the clearest dividing line between roles, appearing in 26% of Data Analyst postings versus 65% of Data Scientist postings. Data Analysts instead lean on Excel (36%) and visualization tools, Tableau (25%) and Power BI (19%).
 
 ## 2. How are in-demand skills trending for Data Scientists?
 
-To find how skills are trending in 2023 for Data Scientists, I filtered data scientist positions and grouped the skills by the month of the job postings. This got me the top 5 skills of data scientists by month, showing how popular skills were throughout 2023.
+To find how skills are trending in 2025 for Data Scientists, I filtered data scientist positions and grouped the skills by the month of the job postings. This got me the top 5 skills of data scientists by month, showing how popular skills were throughout 2025.
 
 View my notebook with detailed steps here:
 [3_Skills_Trends](3_Project/3_Skills_Trend.ipynb)
@@ -115,7 +115,7 @@ sns.despine()
 
 plt.title('Trending Top Skills for Data Scientists in the US')
 plt.ylabel('Likelihood in Job Posting')
-plt.xlabel('2023')
+plt.xlabel('2025')
 plt.legend().remove()
 
 from matplotlib.ticker import PercentFormatter
@@ -136,13 +136,12 @@ for i in range(5):
 plt.show()
 ```
 ### Results
-![Trending Top Skills for Data Scientists in the US](3_Project/Images/skill_trend_DS_2023.png)
+![Trending Top Skills for Data Scientists in the US](3_Project\Images\DS_trending_skills.png)
 
 ### Insights:
-- Python consistently reigns supreme as the most demanded skill, holding a strong lead throughout 2023 and hovering comfortably between 70% and 80% in job postings.
-- SQL and R maintain stable, both having distinct positions in the middle tier, with SQL steadily fluctuating in the 50s and R remaining in the 40s.
-- Tableau and SAS closely compete for the final slot around the 20% to 30% range, notably experiencing an intersection in June before SAS dips significantly in October and rallies back by December.
-- This graph proves that these technologies are safe to learn and are not trending towards being obsoluete in the near future.
+- Python is the most requested skill in every month, ranging from about 48% in September to about 88% in April. SQL is usually second, with R, Tableau, and AWS well behind.
+- Almost every skill dipped in September, with Tableau falling to about 6% and SQL to about 32%. Swings this large probably reflect small monthly samples or fewer postings listing skills, so they should be read cautiously.
+- AWS nearly doubled from about 16% in January to about 30% in June, the largest relative rise of the five skills. It ended December at about 14%, so the gain did not hold through the rest of the year.
 
 ## 3. How well do jobs and skills pay for Data Scientists?
 
@@ -167,13 +166,13 @@ plt.gca().xaxis.set_major_formatter(ticks_x)
 plt.show()
 ```
 ### Results
-![Salary Distributions of Data Jobs in the US](3_Project/Images/pay_per_job_title.png)
+![Salary Distributions of Data Jobs in the US](3_Project\Images\data_salary_distribution.png)
 
 ### Insights
 
-- Senior positions command the highest pay scales, with Senior Data Scientists and Senior Data Engineers sharing the highest median salaries at roughly $150,000. This is not true for Senior Data Analyst, as their pay is lower than Data Engineers and Data Scientists.
-- Data Scientists generally edge out Data Engineers across both experience levels, while Data Analysts consistently hold the lowest overall earning brackets with a base median just under $100,000.
-- Every role features heavy right-skewed outliers extending past $300,000, but mid-level Data Scientists show the most extreme variance with individual salaries stretching close to $600,000.
+- Senior Data Scientists have the highest median salary at roughly $160K, followed by Senior Data Engineers at about $150K. Data Analysts have the lowest median at roughly $95K.
+- Every senior title earns more than its non-senior counterpart, by roughly $15K to $30K at the median. The gap is largest for data scientists and smallest for data engineers.
+- Data Engineers now edge out Data Scientists at the median, though their boxes overlap heavily, so the difference is small. Data Scientists have the widest middle range of the non-senior roles, with outliers running past $500K.
 
 ### Highest Paid & Most Demanded Skills for Data Scientists
 
@@ -202,14 +201,12 @@ ax[1].xaxis.set_major_formatter(plt.FuncFormatter(lambda x, _: f'${int(x/1000)}K
 fig.tight_layout()
 ```
 ### Results
-![The Highest Paid & Most In Demand Skills for Data Scientists in the US](3_Project/Images/DS_skills.png)
+![The Highest Paid & Most In Demand Skills for Data Scientists in the US](3_Project\Images\skill_pay_DS.png)
 
 ### Insights
-- Niche project management and collaboration software command a massive premium over core technical tools. asana leads the highest-paid chart at a staggering median salary of over $250,000, while platforms like airtable, notion, and slack dominate the upper tier. This indicates that data scientists who possess advanced workflow capabilities or specialize in integrating these tools are highly compensated.
-- Specialized engineering and enterprise platforms outpace standard analytical frameworks in compensation. Enterprise systems like watson and redhat, along with game development engines like unreal, drive median salaries past the $190,000 to $210,000 range. These specializations yield higher pay than popular machine learning frameworks like hugging face, which sits closer to $180,000.
-- High market demand does not automatically translate to the highest pay scales. The most widely requested foundational skills max out with tensorflow at roughly $150,000 and scale down to around $120,000 for legacy tools like sas. This suggests a clear market trade-off where these tools offer excellent job security but face salary caps due to a larger pool of qualified candidates, but these medians likely come from a few postings, so treat them cautiously.
-- Core technical staples display remarkable salary consistency within the high-demand tier. Foundational pillars like spark, sql, aws, and python all tightly cluster together with a median payout hovering between $130,000 and $135,000. This baseline represents the predictable market rate for a well-rounded data professional, which visibly outpaces traditional office software like excel.
-
+- The highest-paid skills are mostly project and collaboration tools such as Asana, Wrike, Airtable, and Notion, with Asana leading at about $258K. These tools are rare in Data Scientist postings, so these medians likely come from very few salaries and should be treated cautiously.
+- Among the most requested skills, PyTorch, TensorFlow, and Spark lead at about $150K. That is roughly $12K above SQL and Python, which sit at about $137K.
+- Tableau and SAS are in the top ten for demand but have the lowest medians, at about $125K and $120K. The ten most requested skills span only about $30K in median pay, compared with about $90K among the ten top-paid skills.
 ## 4. What is the most optimal skill to learn for Data Scientists?
 
 To identify the most optimal skills to learn ( the ones that are the highest paid and highest in demand) I calculated the percent of skill demand and the median salary of these skills. To easily identify which are the most optimal skills to learn.
@@ -248,13 +245,13 @@ plt.show()
 ```
 ### Results
 
-![Most Optimal skills for Data Scientists in the US](3_Project/Images/pay_per_skill.png)
+![Most Optimal skills for Data Scientists in the US](3_Project\Images\DS_optimal_skills.png)
 
 ### Insights
 
-- Programming skills like Python and SQL dominate market demand, appearing in roughly 72% and 51% of job listings respectively. However, this widespread adoption correlates with more moderate median salaries hovering between $132K and $135K.
-- Tensorflow represents the highest-paying libraries skill on the chart, commanding a premium median yearly salary near $150K. Conversely, it remains a highly specialized tool that is requested in only about 12% of data scientist positions.
-- Traditional analyst tools like SAS and Excel yield the lowest financial returns, with median salaries sitting at the bottom of the chart between $120K and $124K. They also lag behind in market relevance, appearing in fewer than 25% of active job postings.
+- Python and SQL are the most requested skills, appearing in about 65% and 46% of Data Scientist postings. Both sit at a median salary of about $137K, which is solid but well below the top of the chart.
+- Spark and TensorFlow reach the highest median of about $150K while appearing in only about 12% to 14% of postings. AWS follows at roughly $142K with about 17% of postings, making cloud and library skills the best-paid group on the chart.
+- Tableau and SAS appear in about 19% of postings but have the lowest medians, near $125K and $120K. Java matches Tableau at about $125K but appears in only about 10% of postings, which makes it the weakest on demand.
 
 # What I Learned
 
@@ -267,12 +264,11 @@ Through this project, I built hands-on experience analyzing a real job postings 
 
 # Insights
 
-This project gave me a few general insights into the Data Scientist job market in the US (2023 postings):
+This project gave me a few general insights into the Data Scientist job market in the US (2025 postings):
 
-- **Python and SQL Are the Core:** Python appeared in about 72% of Data Scientist postings and SQL in about 51%, and both stayed steady through 2023.
-- **Demand and Pay Are Not the Same Thing:** The most requested skills (Python, SQL, R) have median salaries around $125K to $135K, while the highest-paid skills (like Asana, Airtable, and Watson) are rare in postings, so those medians come from small samples.
-- **Seniority Raises Pay:** Senior Data Scientists and Senior Data Engineers have the highest median salaries at roughly $150K, and Data Analysts have the lowest.
-- **Specialized Skills Can Pay More:** TensorFlow had the highest median salary (about $150K) among the skills requested in at least 10% of postings, though it appears in only about 12% of them.
+- **Python and SQL are the foundation skills across data roles.** Python appeared in about 65% of Data Scientist postings and was the most requested skill in every month, and SQL is in the top two for both Data Scientists and Data Engineers. Both also pay about $137K at the median, so they offer reliable demand with solid, though not top, pay.
+- **Demand and pay point to different skills.** The most requested skills pay about $135K to $137K, while Spark, TensorFlow, and AWS pay about $142K to $150K despite appearing in only 12% to 17% of postings, and the very top-paid skills like Asana are too rare to trust. A practical strategy is to build the Python and SQL core first and then add one specialized skill such as Spark or AWS.
+- **Role and seniority matter more for pay than any single skill.** The median ranges from about $95K for Data Analysts to about $160K for Senior Data Scientists, a gap of roughly $65K, while the ten most requested skills differ by only about $30K. This suggests that career level and role choice drive pay more than any single tool.
 
 # Challenges I Faced
 
